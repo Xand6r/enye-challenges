@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state={
-      // form data is an array containing all the information entered in the form
+      // form data is an array containing all the information entered in the form each item is an object e.g [{},{}...]
       formData:[]
     }
   }
@@ -34,7 +34,7 @@ class App extends React.Component {
       dateOfBirth,
       hobbies
     }
-    // append the newly gotten data to the table state
+    // append the newly gotten data to the existing one in the table state
     this.setState({formData:[...formData,detail]})
   }
 
