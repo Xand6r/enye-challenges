@@ -43,7 +43,9 @@ class App extends React.Component {
       // use a router to selectively display content
       <Router>
         <div className="App">
+        {/* header component */}
           <Header />
+
           {/* route for the home page which contains the form */}
           <Route exact path="/" render={props=>(
                 <React.Fragment>
@@ -55,6 +57,7 @@ class App extends React.Component {
                 </React.Fragment>
                 )}>
           </Route>
+
 
           {/* route for the page which contains the table */}
           <Route exact path="/table" render={props=>(

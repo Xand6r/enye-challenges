@@ -54,9 +54,9 @@ class InputForm extends Component {
 
         // return the JSX to be displayed as the template
         return (
-            <Form onSubmit={this.handleSubmit} className="login-form">
-                <div className="titleBar">
-                    <h3>DATA</h3>
+            <Form onSubmit={this.handleSubmit} style={styles['loginForm']}>
+                <div style={styles["titleBar"]}>
+                    <h3 style={styles["title"]}>DATA</h3>
                 </div>
                 {/* form item for the first name */}
                 <Form.Item>
@@ -90,7 +90,7 @@ class InputForm extends Component {
                 </Form.Item>
                 {/* form item for the last name */}
                 
-                <div className="flex-container">
+                <div style={styles["flexContainer"]}>
 
                     {/* form item for the date picker */}
                     <Form.Item style={margin} >
@@ -133,7 +133,7 @@ class InputForm extends Component {
                 {/* form item for the submit button */}
                 <Form.Item>
 
-                    <Button style={{width:"120px",marginLeft:"calc(50% - 60px)",marginTop:"30px"}} type="primary" htmlType="submit" className="login-form-button">
+                    <Button style={styles['buttonStyle']} type="primary" htmlType="submit" className="login-form-button">
                         Submit
                     </Button>
 
@@ -146,4 +146,27 @@ class InputForm extends Component {
 }
 
 const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(InputForm);
+
+
+// styles for this component
+const styles={
+    loginForm:{
+        maxWidth: "500px"
+    },
+    titleBar:{
+        textAlign: "center",marginBottom: "60px"
+    },
+    title:{
+        fontSize: "30px",color: "rgb(34, 58, 109)"
+    },
+    flexContainer:{
+        display: "flex",flexWrap: "wrap",justifyContent: "space-between"
+    },
+    buttonStyle:{
+        width:"120px",marginLeft:"calc(50% - 60px)",marginTop:"30px"
+    }
+}
+
+
+
 export default WrappedNormalLoginForm
