@@ -1,20 +1,25 @@
 import React, { Component } from 'react'
 import { Table } from 'antd';
+import { useSelector } from 'react-redux'
 
 
 
+export default function DetailTable (props){
+  
+  // get the user's details from the store
+  const details=useSelector(state=>state.details)
 
-export default class DetailTable extends Component {
-    render() {
-        return (
-            <Table 
-            style={tableStyle}
-                columns={columns} 
-                dataSource={this.props.tableData} 
-                onChange={onChange} 
-            />
-        )
-    }
+  return (
+
+      <Table 
+        style={tableStyle}
+        columns={columns} 
+        dataSource={details} 
+        onChange={onChange} 
+      />
+      
+  )
+    
 }
 
 // column names and details for the table

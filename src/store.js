@@ -7,14 +7,12 @@ const initialState={};
 
 const middleware=[thunk];
 
-
-
-
-
+// create a store containing the initial state,all the reducers and the middlewares
 const store = createStore(
     allReducers, 
     initialState, 
     applyMiddleware(...middleware)
 );
+
 
 export default store

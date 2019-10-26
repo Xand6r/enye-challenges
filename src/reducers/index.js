@@ -4,7 +4,7 @@ import addReducer from "./addReducer";
 
 // combine all the reducers we currently have
 const allReducers=combineReducers({
-    posts:addReducer
+    details:addReducer
 });
 
 
