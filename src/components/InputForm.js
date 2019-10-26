@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Form, Icon, Input, Button, DatePicker,message, InputNumber} from 'antd'
 import { useDispatch } from 'react-redux'
 import addUser from "../actions/addUser"
-import {use} from 'react'
 
 const {TextArea} = Input;
 
@@ -38,10 +37,8 @@ function InputForm(props) {
             
             if(!err){
                 // send the field items to the app's state
-                // props.customValidator(values);
                 Dispatch(addUser(values))
                 success();
-                // clear all the fields
             }
             else{
                 message.error("there was an error saving, please try again!",1.0);
@@ -70,13 +67,12 @@ function InputForm(props) {
 
                 {getFieldDecorator('firstName', {
                     rules: [{ required: true, message: 'Please input your first name!' }],
-                })
-                (
+                })(
                     <Input
                     prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.95)' }} />}
                     placeholder="first name"
                     />,
-                )}
+                   )}
 
             </Form.Item>
             {/* form item for the first name */}
@@ -86,13 +82,12 @@ function InputForm(props) {
 
                 {getFieldDecorator('lastName', {
                     rules: [{ required: true, message: 'Please input your last name!' }],
-                })
-                (
+                })(
                     <Input
                     prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.95)' }} />}
                     placeholder="last name"
                     />,
-                )}
+                  )}
 
             </Form.Item>
             {/* form item for the last name */}
@@ -109,14 +104,13 @@ function InputForm(props) {
                 <Form.Item>
                 {getFieldDecorator('age', {
                     rules: [{ required: true, message: 'Please input your age!' }],
-                })
-                (
+                })(
                     <InputNumber
                     min={0}
                     prefix={<Icon type="number" style={{ color: 'rgba(0,0,0,.95)' }} />}
                     placeholder="age"
                     />,
-                )}
+                  )}
                 </Form.Item>
                 {/* form item for the last name */}
             
@@ -126,14 +120,13 @@ function InputForm(props) {
             <Form.Item>
             {getFieldDecorator('hobbies', {
                 rules: [{ required: true, message: 'Please input your Hobbies!' }],
-            })
-            (
+            })(
                 <TextArea
                 rows={4}
                 prefix={<Icon type="text" style={{ color: 'rgba(0,0,0,.95)' }} />}
                 placeholder="Enter your hobbies"
                 />,
-            )}
+              )}
             </Form.Item>
             {/* form item for the Hobbies*/}
 

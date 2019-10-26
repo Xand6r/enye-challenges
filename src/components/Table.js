@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Table } from 'antd';
 import { useSelector } from 'react-redux'
 
 
 
-export default function DetailTable (props){
+export default function DetailTable (){
   
   // get the user's details from the store
   const details=useSelector(state=>state.details)
