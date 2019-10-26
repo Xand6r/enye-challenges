@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import {Layout,Menu} from 'antd';
 import { Link } from 'react-router-dom'
 const {Header}=Layout
+const flexContainer={
+                        display: "flex",flexWrap: "wrap",justifyContent: "space-between"
+                    }
 
 // component for the heading
 export default class Heading extends Component {
     render() {
         return (
-            <Header className="flex-container">
+            <Header style={flexContainer}>
                 <div className="logo">Enye Form</div>
                 <Menu
                     theme="dark"
