@@ -1,4 +1,4 @@
-import {createStore, applyMiddleware} from 'redux'; //import the function to create a global store
+import {createStore, applyMiddleware, compose} from 'redux'; //import the function to create a global store
 import allReducers from "./reducers"; //import all the reducers
 import thunk from 'redux-thunk'; //import thunk middleware to allow use other drivers in our application
 
@@ -11,7 +11,11 @@ const middleware=[thunk];
 const store = createStore(
     allReducers, 
     initialState, 
-    applyMiddleware(...middleware)
+    // wrap up all of them in compose to combine them as an argument
+    compose(
+        applyMiddleware(...middleware),
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
 );
 
 
