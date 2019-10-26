@@ -1,7 +1,7 @@
 import { ADD_USER } from "./types"
 
-export default addser = ()=>{
+export default addUser = ()=>{
     return {
-        type:ADD_USER   
+        type:ADD_USER 
     }
 }

@@ -1,3 +1,20 @@
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux'; //import the function to create a global store
+import allReducers from "./reducers"; //import all the reducers
+import thunk from 'redux-thunk'; //import thunk middleware to allow use other drivers in our application
 
-const store = 
+// define the initial state to be empty
+const initialState={};
+
+const middleware=[thunk];
+
+
+
+
+
+const store = createStore(
+    allReducers, 
+    initialState, 
+    applyMiddleware(...middleware)
+);
+
+export default store
