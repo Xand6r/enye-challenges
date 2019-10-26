@@ -7,8 +7,8 @@
 
 body{
   background: #D3D3D3;
-  height: 100vh;
 }
+
 
 
 .logo {
@@ -30,7 +30,9 @@ body{
 
 .content{
   display: flex;
-  margin-top: 10%;
+  margin-top: 7%;
+  align-items: center;
   justify-content: center;
-  padding: 0 10px 40px;
+  padding: 0 40px 40px;
+  height: 100%;
 }

@@ -62,7 +62,7 @@ const columns = [
 const tableStyle={
     width:"80%",
     background:"white",
-    margin:"120px auto"
+    margin:"7% auto"
 }
 
 function onChange(pagination, filters, sorter, extra) {
