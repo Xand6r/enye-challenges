@@ -1,20 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Table } from 'antd';
+import { useSelector } from 'react-redux'
 
 
 
+export default function DetailTable (){
+  
+  // get the user's details from the store
+  const details=useSelector(state=>state.details)
 
-export default class DetailTable extends Component {
-    render() {
-        return (
-            <Table 
-            style={tableStyle}
-                columns={columns} 
-                dataSource={this.props.tableData} 
-                onChange={onChange} 
-            />
-        )
-    }
+  return (
+
+      <Table 
+        style={tableStyle}
+        columns={columns} 
+        dataSource={details} 
+        onChange={onChange} 
+      />
+      
+  )
+    
 }
 
 // column names and details for the table
@@ -57,7 +62,7 @@ const columns = [
 const tableStyle={
     width:"80%",
     background:"white",
-    margin:"120px auto"
+    margin:"7% auto"
 }
 
 function onChange(pagination, filters, sorter, extra) {
