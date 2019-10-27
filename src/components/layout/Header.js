@@ -2,9 +2,7 @@ import React from "react";
 import {Layout,Menu} from 'antd';
 import { Link } from 'react-router-dom'
 const {Header}=Layout
-const flexContainer={
-                        display: "flex",flexWrap: "wrap",justifyContent: "space-between"
-                    }
+
 
 // component for the heading
 export default function Heading(){
