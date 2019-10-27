@@ -7,25 +7,6 @@ const flexContainer={
                     }
 
 // component for the heading
-<<<<<<< HEAD
-export default class Heading extends Component {
-    render() {
-        return (
-            <Header style={flexContainer}>
-                <div className="logo">Enye Form</div>
-                <Menu
-                    theme="dark"
-                    mode="horizontal"
-                    defaultSelectedKeys={['1']}
-                    style={{ lineHeight: '64px' }}
-                >
-                    <Menu.Item key="1"><Link to="/">Form</Link></Menu.Item>
-                    <Menu.Item key="2"><Link to="/table">Table</Link></Menu.Item>
-                </Menu>
-            </Header>
-        )
-    }
-=======
 export default function Heading(){
     
     const flexContainer={
@@ -47,7 +28,6 @@ export default function Heading(){
         </Header>
     );
 
->>>>>>> feature-alex-add-redux
 }
 
 
