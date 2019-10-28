@@ -2,3 +2,4 @@
 
 // the action to add a new user to the state
 export const ADD_USER="ADD_USER"
+export const ADD_USER_ASYNC="ADD_USER_ASYNC"

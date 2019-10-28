@@ -16,6 +16,7 @@ export default function DetailTable (){
         columns={columns} 
         dataSource={details} 
         onChange={onChange} 
+        key="ID"
       />
       
   )
@@ -24,6 +25,13 @@ export default function DetailTable (){
 
 // column names and details for the table
 const columns = [
+  {
+    title: 'User Id',
+    dataIndex: 'User Id',
+    // specify the condition of filtering result
+    sorter: (a, b) => a.firstName.length - b.firstName.length,
+    sortDirections: ['descend','ascend'],
+  },
   {
     title: 'firstName',
     dataIndex: 'firstName',

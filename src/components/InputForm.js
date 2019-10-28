@@ -1,8 +1,7 @@
 import React from 'react';
 import { Form, Icon, Input, Button, DatePicker,message, InputNumber} from 'antd'
 import { useDispatch } from 'react-redux'
-import addUser from "../actions/addUser"
-
+import addUserAsync from "../actions/addUserAsync"
 const {TextArea} = Input;
 
 
@@ -12,14 +11,6 @@ function InputForm(props) {
     const Dispatch=useDispatch();
     
     // add a success message to display if the info was sucessfuly saved
-    const success = () => {
-        message
-          .loading('Saving to database..', 1.5)
-          .then(() => message.success('Finished saving', 0.5))
-
-            //Clear the input field after all is said and done
-          .then(()=> props.form.resetFields());
-      };
 
     // method to be called upon submission of the form
     const handleSubmit=e=>{
@@ -36,11 +27,14 @@ function InputForm(props) {
             }
             
             if(!err){
-                // send the field items to the app's state
-                Dispatch(addUser(values))
-                success();
+                // since there is no error, dispatch the action to add an user asynchronously
+                // Dispatch(addUser(values))
+                Dispatch(addUserAsync(values));
+                // clear the form
+                props.form.resetFields();
             }
             else{
+                // if there was an error, alert us so.
                 message.error("there was an error saving, please try again!",1.0);
             }
         })

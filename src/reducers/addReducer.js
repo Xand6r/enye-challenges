@@ -10,7 +10,7 @@ const addReducer=(state=defaultState,action)=>{
     switch(action.type){
         // if the action type is 'ADD_USER', add the user in the payload to the current state and return them
         case ADD_USER:
-            return [...state,action.payload]
+            return [...action.payload]
     
         // default action is to return the current state back
         default:
